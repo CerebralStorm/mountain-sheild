@@ -13,6 +13,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'devise'
 gem 'cancan'
+gem 'bootstrap-sass'
 
 
 group :development, :test do

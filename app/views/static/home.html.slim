@@ -1,5 +1,5 @@
 .row
-  .col-md-6.col-md-offset-3.well.well-lg
+  .col-lg-6.col-lg-offset-3.well.well-lg
     .text-center
       h1 Request a Quote
 
@@ -16,5 +16,8 @@
         .form-group
           = f.label :description
           = f.text_area :description, class: "form-control"
+
+        br
+
         .form-group
-          = f.submit "Submit My Quote", class: "btn btn-primary"
+          = f.submit "Submit My Quote", class: "btn btn-block btn-primary"

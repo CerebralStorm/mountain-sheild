@@ -17,6 +17,8 @@
           = f.label :password_confirmation
           = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
 
+        br
+
         .form-group
           = f.submit "Create My Account", class: "btn btn-block btn-primary"
       = render "devise/shared/links"
