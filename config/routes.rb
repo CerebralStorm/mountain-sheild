@@ -5,6 +5,8 @@ MountainShield::Application.routes.draw do
   get "static/details"
   get "static/services"
   get "static/about"
+
+  resources :quote_requests, only: [:create]
   devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.
