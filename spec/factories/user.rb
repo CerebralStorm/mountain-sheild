@@ -4,6 +4,8 @@ FactoryGirl.define do
     sequence :email do |n|
       "client#{n}@somanypests.com"
     end
+
+    password "stinkypests"
   end
 
 end
