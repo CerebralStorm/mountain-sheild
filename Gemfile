@@ -14,7 +14,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise'
 gem 'cancan'
 gem 'bootstrap-sass'
-
+gem 'autoprefixer-rails'
+gem 'thin'
 
 group :development, :test do
   gem 'pry'

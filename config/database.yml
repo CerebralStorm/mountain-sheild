@@ -17,7 +17,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: mountain-shield_development
+  database: mountainshield_development
   pool: 5
   username: mountainshield
   password:
@@ -46,7 +46,7 @@ development:
 test: &test
   adapter: postgresql
   encoding: unicode
-  database: mountain-shield_test
+  database: mountainshield_test
   pool: 5
   username: mountainshield
   password:
@@ -54,7 +54,7 @@ test: &test
 production:
   adapter: postgresql
   encoding: unicode
-  database: mountain-shield_production
+  database: mountainshield_production
   pool: 5
   username: mountainshield
   password:
