@@ -2,12 +2,13 @@ class StaticController < ApplicationController
   def home
   end
 
-  def help
-  end
-
-  def contact
+  def services
   end
 
   def about
   end
+
+  def details
+  end
+
 end
