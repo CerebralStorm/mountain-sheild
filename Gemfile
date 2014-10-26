@@ -12,7 +12,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'devise'
-
+gem 'cancan'
 
 group :test do
   gem 'cucumber-rails', :require => false
