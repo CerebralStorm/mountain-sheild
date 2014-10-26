@@ -10,33 +10,6 @@ html
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   body
-    nav.navbar.navbar-default role="navigation"
-      .container
-        .navbar-header
-          button.navbar-toggle.collapsed data-target="#main-navbar" data-toggle="collapse" type="button"
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          = link_to "MountainShield", root_path, class: "navbar-brand"
-        #main-navbar.collapse.navbar-collapse
-          ul.nav.navbar-nav
-            li
-              = link_to "Our Services", services_path
-            li
-              = link_to "Why Mountain Shield", about_path
-            li
-              = link_to "Plan Details", details_path
-          ul.nav.navbar-nav.navbar-right
-            - if user_signed_in?
-              li
-                = link_to "My Account", profile_path
-              li
-                = link_to "Sign Out", destroy_user_session_path, method: :delete
-            -else
-              li
-                = link_to "New Account", new_user_registration_path
-              li
-                = link_to "Login", new_user_session_path
+    = render 'layouts/navbar'
     .container
       = yield
