@@ -14,25 +14,23 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise'
 gem 'cancan'
 
+
+group :development, :test do
+  gem 'pry'
+end
+
 group :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'selenium-webdriver'
 end
 
+group :production do
+  gem 'unicorn'
+  gem 'rails_12factor'
+end
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
