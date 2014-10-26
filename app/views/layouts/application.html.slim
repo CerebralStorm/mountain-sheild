@@ -18,17 +18,17 @@ html
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           ul.nav.navbar-nav
             li
-              = link_to "Our Services", static_services_path
+              = link_to "Our Services", services_path
             li
-              = link_to "Why Mountain Shield", static_about_path
+              = link_to "Why Mountain Shield", about_path
             li
-              = link_to "Plan Details", static_details_path
+              = link_to "Plan Details", details_path
           ul.nav.navbar-nav.navbar-right
-            - if signed_in?
+            - if user_signed_in?
               li
-                = link_to "My Account", user_path(current_user)
+                = link_to "My Account", profile_path
               li
-                = link_to "Sign Out", destroy_user_session(current_user), method: :delete
+                = link_to "Sign Out", destroy_user_session_path, method: :delete
             -else
               li
                 = link_to "New Account", new_user_registration_path

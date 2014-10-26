@@ -1,10 +1,11 @@
 MountainShield::Application.routes.draw do
   root 'static#home'
 
-  get "static/home"
-  get "static/details"
-  get "static/services"
-  get "static/about"
+  get "/home", to: "static#home"
+  get "/details", to: "static#details"
+  get "/services", to: "static#services"
+  get "/about", to: "static#about"
+  get "/profile", to: 'profile#show'
 
   resources :quote_requests, only: [:create]
   devise_for :users
