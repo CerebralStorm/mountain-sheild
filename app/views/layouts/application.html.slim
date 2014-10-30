@@ -12,5 +12,7 @@ html
   body
     = render 'layouts/navbar'
     = render 'layouts/flash'
-    .container
+    #main-wrapper.container
       = yield
+
+    = render 'layouts/footer'

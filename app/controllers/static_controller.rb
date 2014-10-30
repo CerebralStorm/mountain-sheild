@@ -14,6 +14,12 @@ class StaticController < ApplicationController
     @quote_request = QuoteRequest.new
   end
 
+  def terms
+  end
+
+  def privacy
+  end
+
 private
 
   def quote_request_params

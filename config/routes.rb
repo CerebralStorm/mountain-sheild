@@ -5,6 +5,8 @@ MountainShield::Application.routes.draw do
   get "/home", to: "static#home"
   get "/details", to: "static#details"
   get "/services", to: "static#services"
+  get "/terms", to: "static#terms"
+  get "/privacy", to: "static#privacy"
   get "/about", to: "static#about"
   get "/profile", to: 'profile#show'
 
