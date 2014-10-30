@@ -2,20 +2,17 @@ Feature: Quote Requestss
   As a user, I should be able to request quotes so that I can know how much services will cost
 
   Background:
-    Given there is a user "ray@bustinghosts.com" with password "slimer-Ecto-1"
-    And "ray@bustinghosts.com" is signed in
-    And I visit the home page
+    Given I visit the home page
 
   @javascript
   Scenario: Create valid quote request
     When I fill out the quote request form with valid values
-    And I submit the form
     Then I should see a succesful quote request message
 
-  # @javascript
-  # Scenario: Sign in with bad credentials
-  #   When I try to log in with the wrong password
-  #   Then I should not be logged in
+  @javascript
+  Scenario: Create invalid quote request
+    When I fill out the quote request form with invalid values
+    Then I should see an unsuccesful quote request message
 
   # @javascript
   # Scenario: Sign In
