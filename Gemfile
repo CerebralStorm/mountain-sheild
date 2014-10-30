@@ -16,6 +16,7 @@ gem 'cancan'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'thin'
+gem 'rails_admin'
 
 group :development, :test do
   gem 'pry'

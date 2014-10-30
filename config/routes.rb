@@ -1,4 +1,5 @@
 MountainShield::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'static#home'
 
   get "/home", to: "static#home"
