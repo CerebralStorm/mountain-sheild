@@ -13,10 +13,17 @@
     .text-center
       h1 Request a Quote
 
-      = form_for QuoteRequest.new do |f|
+      = form_for @quote_request do |f|
+        -if @quote_request.errors.any?
+          strong.text-danger
+            |Your quote could not be saved for the following reasons:
+          ul.list-unstyled
+            - @quote_request.errors.full_messages.each do |message|
+              li.text-danger
+                = message
         .form-group
           = f.label :name
-          = f.email_field :name, class: "form-control"
+          = f.text_field :name, class: "form-control"
         .form-group
           = f.label :email
           = f.email_field :email, class: "form-control"
