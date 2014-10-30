@@ -1,6 +1,8 @@
 FactoryGirl.define do
   factory :employee_notifier do
-    email "MyString"
+    sequence :email do |n|
+      "employee#{n}@mountainshield.com"
+    end
   end
 
 end
