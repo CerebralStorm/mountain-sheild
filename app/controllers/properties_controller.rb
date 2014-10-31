@@ -12,19 +12,32 @@ class PropertiesController < ApplicationController
     @property = Property.new
   end
 
+  def edit
+    @property = Property.find(params[:id])
+  end
+
   def create
     @property = Property.new(property_params)
     if @property.save
-      redirect_to @property, flash: { success: "Your property was successfully added."}
+      redirect_to @property, flash: { success: "Your property was successfully added." }
     else
       render "new"
     end
   end
 
   def update
+    @property = Property.find(params[:id])
+
+    if @property.update_attributes(property_params)
+      redirect_to @property, flash: { success: "Your property was successfully updated." }
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    Property.find(params[:id]).destroy
+    redirect_to properties_path, flash: { success: "Your property was successfully removed" }
   end
 
 private
