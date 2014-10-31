@@ -19,6 +19,8 @@ gem 'thin'
 gem 'rails_admin'
 gem "font-awesome-rails"
 gem 'will_paginate-bootstrap'
+gem 'datetimepicker-rails', :git => 'git://github.com/zpaulovics/datetimepicker-rails.git', :branch => 'master', :submodules => true
+gem 'momentjs-rails'
 
 group :development, :test do
   gem 'pry'

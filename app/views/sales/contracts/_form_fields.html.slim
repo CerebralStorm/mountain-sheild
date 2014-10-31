@@ -8,7 +8,8 @@
 
 .form-group
   = f.label :initial_service_date
-  = f.text_field :initial_service_date, class: "form-control"
+  = f.hidden_field :initial_service_date, value: (@contract.initial_service_date.present? ? @contract.initial_service_date : "")
+  = text_field_tag :mock_contract_initial_service_date, (@contract.initial_service_date.present? ? @contract.initial_service_date : ""), data: {id: "contract_initial_service_date"},  class: "form-control datetimepicker"
 .form-group
   = f.label :initial_service_charge
   = f.number_field :initial_service_charge, class: "form-control"
