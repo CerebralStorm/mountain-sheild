@@ -17,6 +17,7 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'thin'
 gem 'rails_admin'
+gem "font-awesome-rails"
 
 group :development, :test do
   gem 'pry'

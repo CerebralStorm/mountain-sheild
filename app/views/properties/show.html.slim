@@ -1,0 +1,25 @@
+= link_to icon_link("Back to My Account", "fa fa-arrow-circle-left"), properties_path
+.panel.panel-default
+  .panel-heading
+    h4 Property Details
+  .panel-body
+    .row
+      .col-md-4
+        strong Address
+      .col-md-8
+        = @property.address
+    .row
+      .col-md-4
+        strong City
+      .col-md-8
+        = @property.city
+    .row
+      .col-md-4
+        strong State
+      .col-md-8
+        = @property.state
+    .row
+      .col-md-4
+        strong Zip
+      .col-md-8
+        = @property.zip

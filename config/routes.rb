@@ -8,8 +8,8 @@ MountainShield::Application.routes.draw do
   get "/terms", to: "static#terms"
   get "/privacy", to: "static#privacy"
   get "/about", to: "static#about"
-  get "/profile", to: 'profile#show'
 
+  resources :properties
   resources :quote_requests, only: [:create]
   devise_for :users
 
