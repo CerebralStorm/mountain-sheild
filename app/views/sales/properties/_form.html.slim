@@ -1,0 +1,6 @@
+-if @property.persisted?
+  = form_for @property, url: "/sales/users/#{@user.id}/properties/#{@property.id}", method: :put do |f|
+    = render partial: "sales/properties/form_fields", locals: {f: f}
+-else
+  = form_for @property, url: "/sales/users/#{@user.id}/properties", method: :post do |f|
+    = render partial: "sales/properties/form_fields", locals: {f: f}

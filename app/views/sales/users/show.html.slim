@@ -18,10 +18,11 @@
 
   .panel-footer
     h4 Properties
+    = link_to icon_link("Add Property", "fa fa-plus-square"), new_sales_user_property_path(@user)
     - if @user.properties.any?
-      ul
+      ul.nav.nav-pills.nav-stacked
         - @user.properties.each do |property|
           li
-            = property
+            = link_to property.address, sales_user_property_path(@user, property)
     - else
       p User doesn't have any properties created.

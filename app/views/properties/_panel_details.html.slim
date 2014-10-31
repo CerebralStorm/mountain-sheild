@@ -1,0 +1,21 @@
+.panel-body
+  table.table
+    tr
+      th Address
+      th City
+      th State
+      th Zip
+    tr
+      td = @property.address
+      td = @property.city
+      td = @property.state
+      td = @property.zip
+.panel-footer
+  h4 Service History
+  - if @property.contracts.any?
+    ul
+      - @property.contracts.each do |contract|
+        li
+          = contract
+  - else
+    p You don't appear to have any history of this property being serviced

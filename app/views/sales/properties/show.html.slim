@@ -1,0 +1,10 @@
+= link_to icon_link("Back to User", "fa fa-arrow-circle-left"), sales_user_path(@user)
+.panel.panel-default
+  .panel-heading
+    h4.pull-left Property Details
+    .pull-right
+      = link_to icon_link("Edit", "fa fa-pencil-square-o"), edit_sales_user_property_path(@user, @property)
+      |&nbsp;|&nbsp;
+      = link_to icon_link("Delete", "fa fa-remove"), sales_user_property_path(@user, @property), method: :delete, confirm: "Are you sure?"
+    .clearfix
+= render 'properties/panel_details'
