@@ -1,0 +1,25 @@
+-if @user.errors.any?
+  strong.text-danger
+    |Your user could not be saved for the following reasons:
+  ul.list-unstyled
+    - @user.errors.full_messages.each do |message|
+      li.text-danger
+        = message
+
+.form-group
+  = f.label :name
+  = f.text_field :name, class: "form-control"
+.form-group
+  = f.label :email
+  = f.email_field :email, class: "form-control"
+.form-group
+  = f.label :password
+  = f.password_field :password, class: "form-control"
+.form-group
+  = f.label :password_confirmation
+  = f.password_field :password_confirmation, class: "form-control"
+
+br
+
+.form-group
+  = f.submit "Save This User", class: "btn btn-block btn-primary"

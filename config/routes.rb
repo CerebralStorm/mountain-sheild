@@ -11,6 +11,14 @@ MountainShield::Application.routes.draw do
 
   resources :properties
   resources :quote_requests, only: [:create]
+
+  namespace :sales do
+    resources :users do
+      resources :properties do
+        resources :contracts
+      end
+    end
+  end
   devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,6 @@
+- if @user.persisted?
+  = form_for @user, url: "/sales/users/#{@user.id}", method: :put do |f|
+    = render partial: "sales/users/form_fields", locals: {f: f}
+- else
+  = form_for @user, url: "/sales/users/", method: :post do |f|
+    = render partial: "sales/users/form_fields", locals: {f: f}

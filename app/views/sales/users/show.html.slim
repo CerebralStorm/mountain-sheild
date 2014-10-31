@@ -1,0 +1,27 @@
+= link_to icon_link("Back to Users", "fa fa-arrow-circle-left"), sales_users_path
+.panel.panel-default
+  .panel-heading
+    h4.pull-left User Details
+    .pull-right
+      = link_to icon_link("Edit", "fa fa-pencil-square-o"), edit_sales_user_path(@user)
+      |&nbsp;|&nbsp;
+      = link_to icon_link("Delete", "fa fa-remove"), sales_user_path(@user), method: :delete, confirm: "Are you sure?"
+    .clearfix
+  .panel-body
+    table.table
+      tr
+        th Name
+        th Email
+      tr
+        td = @user.name
+        td = @user.email
+
+  .panel-footer
+    h4 Properties
+    - if @user.properties.any?
+      ul
+        - @user.properties.each do |property|
+          li
+            = property
+    - else
+      p User doesn't have any properties created.

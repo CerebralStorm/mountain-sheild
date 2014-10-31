@@ -1,0 +1,15 @@
+= will_paginate @users, renderer: BootstrapPagination::Rails
+
+.col-md-6.col-md-offset-3
+  .panel.panel-default
+    .panel-heading
+      h4.text-center Users
+    .panel-body
+      = link_to icon_link("Add User", "fa fa-plus-square"), new_sales_user_path, class: "btn btn-block btn-primary"
+
+      .list-group
+        - @users.each do |user|
+          = link_to user.email, sales_user_path(user), class: "list-group-item text-center"
+
+
+= will_paginate @users, renderer: BootstrapPagination::Rails

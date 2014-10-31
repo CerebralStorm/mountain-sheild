@@ -18,6 +18,7 @@ gem 'autoprefixer-rails'
 gem 'thin'
 gem 'rails_admin'
 gem "font-awesome-rails"
+gem 'will_paginate-bootstrap'
 
 group :development, :test do
   gem 'pry'
