@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
 
   has_many :properties, dependent: :destroy
   has_many :contracts, through: :properties
+
+  def full_name
+    [self.first_name, self.last_name].join(" ")
+  end
 end

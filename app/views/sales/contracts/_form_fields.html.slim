@@ -5,16 +5,84 @@
     - @contract.errors.full_messages.each do |message|
       li.text-danger
         = message
+.row
+  .col-md-6
+    h4 Service Information
+    .form-group
+      = f.label :service_address
+      = f.number_field :service_address, class: "form-control"
+    .form-group
+      = f.label :service_city
+      = f.number_field :service_city, class: "form-control"
+    .form-group
+      = f.label :service_state
+      = f.number_field :service_state, class: "form-control"
+    .form-group
+      = f.label :service_zip
+      = f.number_field :service_zip, class: "form-control"
+  .col-md-6
+    h4 Billing Information
+    .form-group
+      = f.label :billing_address
+      = f.number_field :billing_address, class: "form-control"
+    .form-group
+      = f.label :billing_city
+      = f.number_field :billing_city, class: "form-control"
+    .form-group
+      = f.label :billing_state
+      = f.number_field :billing_state, class: "form-control"
+    .form-group
+      = f.label :billing_zip
+      = f.number_field :billing_zip, class: "form-control"
+hr
+h4 Service Details
+.row
+  .col-md-4
+    .form-group
+      = f.label :initial_service_date
+      = f.hidden_field :initial_service_date, value: (@contract.initial_service_date.present? ? @contract.initial_service_date : "")
+      = text_field_tag :mock_contract_initial_service_date, (@contract.initial_service_date.present? ? @contract.initial_service_date : ""), data: {id: "contract_initial_service_date"},  class: "form-control datetimepicker"
+    .form-group
+      = f.label :initial_service_charge
+      = f.number_field :initial_service_charge, class: "form-control"
+    .form-group
+      = f.label :recurring_service_charge
+      = f.number_field :recurring_service_charge, class: "form-control"
+  .col-md-8
+    .form-group
+      = f.label :notes
+      = f.text_area :notes, class: "form-control", rows: "9"
 
-.form-group
-  = f.label :initial_service_date
-  = f.hidden_field :initial_service_date, value: (@contract.initial_service_date.present? ? @contract.initial_service_date : "")
-  = text_field_tag :mock_contract_initial_service_date, (@contract.initial_service_date.present? ? @contract.initial_service_date : ""), data: {id: "contract_initial_service_date"},  class: "form-control datetimepicker"
-.form-group
-  = f.label :initial_service_charge
-  = f.number_field :initial_service_charge, class: "form-control"
+h4 Signatures
+.row
+  .col-md-6
+    .form-group
+      #customer_sig.sigPad
+        = f.label :customer_print_signature, "Customer Name"
+        = f.text_field :customer_print_signature, class: "form-control"
+        p.drawItDesc Draw your signature
+        ul.sigNav
+          li.clearButton
+            a href="#clear"  Clear
+        .sig.sigWrapper
+          .typed
+          canvas.pad height="200" width="530"
+          input.output name="customer_signature" type="hidden"
+  .col-md-6
+    .form-group
+      #sales_rep_sig.sigPad
+        = f.label :sales_rep_print_signature, "Sales Rep. Name"
+        = f.text_field :sales_rep_print_signature, class: "form-control"
+        p.drawItDesc Draw your signature
+        ul.sigNav
+          li.clearButton
+            a href="#clear"  Clear
+        .sig.sigWrapper
+          .typed
+          canvas.pad height="200" width="530"
+          input.output name="sales_rep_signature" type="hidden"
 
 br
 
 .form-group
-  = f.submit "Save My Contract", class: "btn btn-block btn-primary"
+  = f.submit "Save Contract", class: "btn btn-block btn-primary"

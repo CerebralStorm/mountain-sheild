@@ -1,4 +1,5 @@
 ready = ->
+  $('.sigPad').signaturePad({drawOnly:true})
   $('.datetimepicker').datetimepicker()
   $('.datetimepicker').on 'change', (event) ->
     textId = $(event.target).data('id')
