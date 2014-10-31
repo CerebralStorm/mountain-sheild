@@ -1,10 +1,6 @@
 class Sales::PropertiesController < ApplicationController
   before_action :set_user
 
-  def index
-    @properties = user.properties
-  end
-
   def show
     @property = Property.find(params[:id])
   end

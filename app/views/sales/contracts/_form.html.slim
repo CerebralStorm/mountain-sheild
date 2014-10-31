@@ -1,0 +1,6 @@
+- if @contract.persisted?
+  = form_for @contract, url: "/sales/users/#{@user.id}/properties/#{@property.id}/contracts/#{@contract.id}", method: :put do |f|
+    = render partial: "sales/contracts/form_fields", locals: {f: f}
+- else
+  = form_for @contract, url: "/sales/users/#{@user.id}/properties/#{@property.id}/contracts/", method: :post do |f|
+    = render partial: "sales/contracts/form_fields", locals: {f: f}

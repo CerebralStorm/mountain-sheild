@@ -7,4 +7,26 @@
       |&nbsp;|&nbsp;
       = link_to icon_link("Delete", "fa fa-remove"), sales_user_property_path(@user, @property), method: :delete, confirm: "Are you sure?"
     .clearfix
-= render 'properties/panel_details'
+  .panel-body
+    table.table
+      tr
+        th Address
+        th City
+        th State
+        th Zip
+      tr
+        td = @property.address
+        td = @property.city
+        td = @property.state
+        td = @property.zip
+  .panel-footer
+    h4 Service History
+    = link_to icon_link("Add Contract", "fa fa-plus-square"), new_sales_user_property_contract_path(@user, @property)
+    - if @property.contracts.any?
+      ul
+        - @property.contracts.each do |contract|
+          li
+            = contract
+    - else
+      p You don't appear to have any history of this property being serviced
+

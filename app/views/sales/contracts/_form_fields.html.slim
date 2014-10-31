@@ -1,0 +1,19 @@
+-if @contract.errors.any?
+  strong.text-danger
+    |Your contract could not be saved for the following reasons:
+  ul.list-unstyled
+    - @contract.errors.full_messages.each do |message|
+      li.text-danger
+        = message
+
+.form-group
+  = f.label :initial_service_date
+  = f.text_field :initial_service_date, class: "form-control"
+.form-group
+  = f.label :initial_service_charge
+  = f.number_field :initial_service_charge, class: "form-control"
+
+br
+
+.form-group
+  = f.submit "Save My Contract", class: "btn btn-block btn-primary"

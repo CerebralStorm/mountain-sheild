@@ -1,0 +1,20 @@
+= link_to icon_link("Back to Property", "fa fa-arrow-circle-left"), sales_user_property_path(@user, @property)
+.panel.panel-default
+  .panel-heading
+    h4.pull-left Contract Details
+    .pull-right
+      = link_to icon_link("Edit", "fa fa-pencil-square-o"), edit_sales_user_property_contract_path(@user, @property, @contract)
+      |&nbsp;|&nbsp;
+      = link_to icon_link("Delete", "fa fa-remove"), sales_user_property_path(@user, @property, @contract), method: :delete, confirm: "Are you sure?"
+    .clearfix
+  .panel-body
+    table.table
+      tr
+        th Initial Service Date
+        th Initial Service Charge
+        th Status
+      tr
+        td = @contract.initial_service_date
+        td = @contract.initial_service_charge
+        td = @contract.status
+
